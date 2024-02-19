@@ -44,9 +44,10 @@ recvThread.start()
 # CREATE FUNCTIONS HERE....
 
 
-print("\nRyan Jerzyk/Christopher Melbow")
-print("Program Name:Autonomous  ")
-print("Date:2.6.24 ")
+print("\nChristopher Melbow/Ryan Jerzyk/Madelyn Hershberger")
+print("Program Name: Autonomous")
+print("Date: 2.6.2024")
+print("Drone WIFI = DE1F")
 print("\n****CHECK YOUR TELLO WIFI ADDRESS****")
 print("\n****CHECK SURROUNDING AREA BEFORE FLIGHT****")
 ready = input('\nAre you ready to take flight: ')
@@ -54,10 +55,12 @@ ready = input('\nAre you ready to take flight: ')
 
 try:
     if ready.lower() == 'yes':
+        # first checkpoint
         print("\nStarting Drone!\n")
-
-        sendmsg('command', 0)
-        sendmsg('takeoff')
+        sendmsg('battery?')
+        sendmsg('command')
+        sendmsg('takeoff', 7)
+        sendmsg('forward 200', 7)
 
         # Review the (SDK) Software Development Kit resource for Drone Commands
         # Delete these comments before writing your program
