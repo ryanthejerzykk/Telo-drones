@@ -57,10 +57,12 @@ try:
     if ready.lower() == 'yes':
         # first checkpoint
         print("\nStarting Drone!\n")
-        sendmsg('battery?')
+        sendmsg('battery?', 3)
         sendmsg('command')
         sendmsg('takeoff', 7)
-        sendmsg('forward 200', 7)
+        sendmsg('forward 230', 7)
+        # Second Checkpoint
+        sendmsg('go 225 0 40 50', 7)
 
         # Review the (SDK) Software Development Kit resource for Drone Commands
         # Delete these comments before writing your program
