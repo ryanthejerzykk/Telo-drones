@@ -47,34 +47,37 @@ recvThread.start()
 print("\nChristopher Melbow/Ryan Jerzyk/Madelyn Hershberger")
 print("Program Name: Autonomous")
 print("Date: 2.6.2024")
-print("Drone WIFI = DE1F")
+print("Drone WIFI = 4E1D")
 print("\n****CHECK YOUR TELLO WIFI ADDRESS****")
 print("\n****CHECK SURROUNDING AREA BEFORE FLIGHT****")
 ready = input('\nAre you ready to take flight: ')
 
 
-try:
-    if ready.lower() == 'yes':
-        # first checkpoint
-        print("\nStarting Drone!\n")
-        sendmsg('battery?', 3)
-        sendmsg('command')
-        sendmsg('takeoff', 7)
-        sendmsg('forward 230', 7)
-        # Second Checkpoint
-        sendmsg('go 225 0 40 50', 7)
+
+if ready.lower() == 'yes':
+    # first checkpoint
+    print("\nStarting Drone!\n")
+    sendmsg('battery?', 3)
+    sendmsg('command')
+    sendmsg('takeoff', 7)
+    sendmsg('forward 210', 7)
+    # Second Checkpoint
+    sendmsg('go 225 0 40 50', 10)
+    # Third Checkpoint
+    sendmsg('curve 125 125 0 0 250 0 50', 12)
+    sendmsg('cw 180', 7)
+    sendmsg('forward 40', 7)
 
         # Review the (SDK) Software Development Kit resource for Drone Commands
         # Delete these comments before writing your program
 
-        sendmsg('land')
+    sendmsg('land')
 
-        print('\nGreat Flight!!!')
+    print('\nGreat Flight!!!')
 
-    else:
-        print('\nMake sure you check WIFI, surroundings, co-pilot is ready, re-run program\n')
-except KeyboardInterrupt:
-    sendmsg('emergency')
+else:
+    print('\nMake sure you check WIFI, surroundings, co-pilot is ready, re-run program\n')
+
 
 breakr = True
 sock.close()
