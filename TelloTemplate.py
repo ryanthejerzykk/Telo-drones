@@ -70,7 +70,22 @@ if ready.lower() == 'yes':
 
 else:
     print('\nMake sure you check WIFI, surroundings, co-pilot is ready, re-run program\n')
+#if ready.lower() == 'yes':
+        #print("\nStarting Drone!\n")
 
+        #sendmsg('command')
+        #sendmsg('takeoff',10)
+        #sendmsg('forward 50',10)
+        #sendmsg('ccw 90',10)
+        #sendmsg('forward 50', 10)
+        #sendmsg('ccw 90', 10)
+        #sendmsg('forward 50', 10)
+        #sendmsg('ccw 90', 10)
+        #sendmsg('forward 50', 10)
+        #sendmsg('ccw 90', 10)
+        #sendmsg('land')
 
-breakr = True
-sock.close()
+        #print('\nGreat Flight!!!')
+
+#breakr = True
+#sock.close()
